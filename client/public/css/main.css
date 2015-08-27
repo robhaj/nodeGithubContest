@@ -6,3 +6,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+span.hermy {
+	background: url("img/dark_wood.png") no-repeat;
+}
+span.light {
+	background: url("img/tileable_wood_texture.png") no-repeat;
+}

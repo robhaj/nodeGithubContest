@@ -16,13 +16,12 @@ router.get('/', function(req, res, next) {
 
 router.post('/submit', function(req,res,next){
   var newUser = new Submission(req.body.name, req.body.url, req.body.avi);
-  contestants.push(newUser);
-  console.log(contestants);
-  res.redirect('/contest');
-});
-
-router.get('/form', function(req, res, next) {
-  res.render('form', {title: 'Contest'});
+  if (contestants.length > 7)
+    res.redirect('/contest');
+  else {
+    contestants.push(newUser);
+      res.redirect('/addUser');
+}
 });
 
 router.get('/adduser', function(req, res, next) {
